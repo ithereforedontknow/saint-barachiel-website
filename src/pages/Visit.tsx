@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Bus, Car, CheckCircle2, Send, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Visit() {

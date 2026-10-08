@@ -66,7 +66,7 @@ export default function Footer() {
               <li><Link to="/visit" className="hover:text-blue-700 transition">Send an Inquiry</Link></li>
               <li>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/SaintBarachiel2001"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-700 transition inline-flex items-center gap-1 text-slate-700 font-medium"

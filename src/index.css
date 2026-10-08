@@ -166,3 +166,12 @@
     animation: none !important;
   }
 }
+.duration-350 {
+  transition-duration: 350ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-all {
+    transition: none !important;
+  }
+}

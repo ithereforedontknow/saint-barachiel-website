@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ImagePlus,
   FlaskConical,
@@ -7,7 +7,7 @@ import {
   Telescope,
   type LucideIcon,
 } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "/logo.png";
 
 interface WordmarkProps {
   dark?: boolean;

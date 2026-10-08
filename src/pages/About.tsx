@@ -7,9 +7,6 @@ export default function About() {
       {/* Header Band */}
       <section className="border-b border-slate-200 bg-slate-50 py-16 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-4">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100/80 px-3 py-1 rounded-full border border-blue-200 inline-block">
-            About Saint Barachiel
-          </span>
           <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
             Nurturing academic brilliance and character.
           </h1>

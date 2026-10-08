@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight, ChevronRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Wordmark } from "./Wordmark";
 
 export default function Header() {
@@ -19,22 +19,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
       {/* Light Mode Admissions Announcement Bar */}
-      <div className="bg-blue-50/80 text-slate-700 text-xs sm:text-sm font-medium py-2 px-4 border-b border-blue-100/80">
-        <div className="max-w-7xl mx-auto flex items-center justify-center flex-wrap gap-2 text-center">
-          <span className="bg-amber-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-flex items-center gap-1 shadow-2xs">
-            <Sparkles size={11} /> SY 2026-2027
-          </span>
-          <span className="text-slate-800">
-            Admissions open for Preschool, Elementary & Junior High School.
-          </span>
-          <Link
-            to="/enrollment"
-            className="text-blue-700 hover:text-blue-800 font-semibold inline-flex items-center gap-0.5 hover:underline"
-          >
-            Enroll Today <ChevronRight size={14} />
-          </Link>
-        </div>
-      </div>
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 h-18 flex items-center justify-between">

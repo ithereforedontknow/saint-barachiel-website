@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { Wordmark } from "./Wordmark";

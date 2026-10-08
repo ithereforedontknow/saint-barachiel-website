@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, ShieldCheck, Users } from "lucide-react";
 import {
-  HeroScienceIllustration,
   RoboticsLabIllustration,
-  SciencePillarIllustration,
-  ValuesPillarIllustration,
-  MentorshipPillarIllustration,
 } from "../components/SchoolIllustrations";
 
 export default function Home() {

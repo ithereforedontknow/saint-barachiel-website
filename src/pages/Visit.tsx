@@ -14,9 +14,6 @@ export default function Visit() {
     <div className="min-h-screen bg-white py-16 px-5 sm:px-8 max-w-7xl mx-auto space-y-16">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100/80 px-3 py-1 rounded-full border border-blue-200 inline-block">
-          Campus Location & Contact
-        </span>
         <h1 className="text-4xl font-bold text-[#0b132b] tracking-tight">
           Visit Saint Barachiel
         </h1>

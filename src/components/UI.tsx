@@ -7,7 +7,7 @@ import {
   Telescope,
   type LucideIcon,
 } from "lucide-react";
-import logo from "/logo.png";
+import logo from "/public/logo.png";
 
 interface WordmarkProps {
   dark?: boolean;

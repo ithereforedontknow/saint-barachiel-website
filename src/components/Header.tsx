@@ -18,10 +18,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-      {/* Light Mode Admissions Announcement Bar */}
-
-      {/* Main Navbar */}
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 h-18 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
         {/* Brand Wordmark */}
         <Link to="/" className="flex items-center">
           <Wordmark />
@@ -37,7 +34,7 @@ export default function Header() {
                 to={item.path}
                 className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? "text-blue-700 bg-blue-50/90 font-semibold"
+                    ? "text-blue-700 bg-blue-50 font-semibold"
                     : "text-slate-600 hover:text-[#0b132b] hover:bg-slate-100"
                 }`}
               >

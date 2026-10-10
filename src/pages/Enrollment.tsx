@@ -10,7 +10,7 @@ export default function Enrollment() {
           Simple 4-step enrollment process.
         </h1>
         <p className="text-slate-600 text-base">
-          Join the Saint Barachiel community. We accept transferees and new applicants for Preschool, Elementary, and Junior High School.
+          Join the Saint Barachiel community. We accept transferees and new applicants for Preschool and Elementary.
         </p>
       </div>
 
@@ -55,7 +55,7 @@ export default function Enrollment() {
             </span>
             <h3 className="font-bold text-lg text-[#0b132b]">Learner Assessment</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Short, friendly learner interview to determine proper grade track placement.
+              Short, friendly learner interview to determine proper grade level placement.
             </p>
           </div>
           <span className="text-[11px] text-slate-500 font-medium">On-Campus or Online</span>
@@ -69,7 +69,7 @@ export default function Enrollment() {
             </span>
             <h3 className="font-bold text-lg text-[#0b132b]">Official Reservation</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Settle reservation downpayment to secure the student slot for SY 2026-2027.
+              Settle the reservation fee to secure the student slot for SY 2026-2027.
             </p>
           </div>
           <span className="text-[11px] text-emerald-700 font-bold">Slot Guaranteed</span>

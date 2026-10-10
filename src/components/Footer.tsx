@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <Wordmark />
             <p className="text-slate-600 leading-relaxed max-w-sm text-sm">
-              Empowering future scientists and leaders through an enriched science curriculum, character formation, and academic rigor in Aringay, La Union.
+              A non-sectarian Christian school serving Nursery through Grade 6 with a science-oriented curriculum, in Aringay, La Union.
             </p>
             <div className="pt-2 text-xs text-slate-600 space-y-2">
               <p className="flex items-start gap-2.5">
@@ -20,11 +20,11 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2.5">
                 <Phone size={15} className="text-blue-700 shrink-0" />
-                <span>0917 123 4567 / (072) 607 1234</span>
+                <span>(072) 607-1644</span>
               </p>
               <p className="flex items-center gap-2.5">
                 <Mail size={15} className="text-blue-700 shrink-0" />
-                <span>admissions@sbsss.edu.ph</span>
+                <span>saintbarachiel_school@yahoo.com</span>
               </p>
             </div>
           </div>
@@ -37,8 +37,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-slate-600">
               <li><Link to="/programs" className="hover:text-blue-700 transition">Preschool (Nursery & Kinder)</Link></li>
               <li><Link to="/programs" className="hover:text-blue-700 transition">Elementary (Grades 1-6)</Link></li>
-              <li><Link to="/programs" className="hover:text-blue-700 transition">Junior High School</Link></li>
-              <li><Link to="/programs" className="hover:text-blue-700 transition">STEM & Robotics Focus</Link></li>
+              <li><Link to="/programs" className="hover:text-blue-700 transition">Science Track</Link></li>
             </ul>
           </div>
 
@@ -50,7 +49,6 @@ export default function Footer() {
             <ul className="space-y-2.5 text-slate-600">
               <li><Link to="/enrollment" className="hover:text-blue-700 transition">Enrollment Steps</Link></li>
               <li><Link to="/enrollment" className="hover:text-blue-700 transition">Requirements Checklist</Link></li>
-              <li><Link to="/enrollment" className="hover:text-blue-700 transition">Tuition & Assistance</Link></li>
               <li><Link to="/faq" className="hover:text-blue-700 transition">Frequently Asked Questions</Link></li>
             </ul>
           </div>
@@ -79,10 +77,8 @@ export default function Footer() {
 
         {/* Bottom Footer Credits */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Saint Barachiel Special Science School Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Saint Barachiel Special Science School, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span className="hover:text-[#0b132b] cursor-pointer">DepEd Recognized</span>
-            <span className="hover:text-[#0b132b] cursor-pointer">Student Safety</span>
             <Link to="/visit" className="hover:text-[#0b132b]">Contact Registrar</Link>
           </div>
         </div>

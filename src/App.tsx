@@ -19,7 +19,7 @@ function ScrollToTop(): null {
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[var(--ink)] font-sans">
+    <div className="min-h-screen flex flex-col bg-white text-[var(--color-ink)] font-sans">
       <ScrollToTop />
       <Header />
       <main className="flex-1">

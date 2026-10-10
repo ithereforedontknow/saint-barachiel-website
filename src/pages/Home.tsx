@@ -1,24 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, ShieldCheck, Users } from "lucide-react";
-import {
-  RoboticsLabIllustration,
-} from "../components/SchoolIllustrations";
+import { ArrowRight, BookOpen, ShieldCheck, Users, MapPin, Sprout, Microscope } from "lucide-react";
+import { RoboticsLabIllustration } from "../components/SchoolIllustrations";
 
 export default function Home() {
   const animatedWords = [
-    {
-      text: "scientific excellence.",
-      style: "bg-amber-100/90 border-amber-300/80 text-amber-950",
-    },
-    {
-      text: "creative discovery.",
-      style: "bg-emerald-100/90 border-emerald-300/80 text-emerald-950",
-    },
-    {
-      text: "future leadership.",
-      style: "bg-blue-100/90 border-blue-300/80 text-blue-950",
-    },
+    { text: "scientific excellence.", style: "bg-amber-100 text-amber-950" },
+    { text: "creative discovery.", style: "bg-emerald-100 text-emerald-950" },
+    { text: "future leadership.", style: "bg-blue-100 text-blue-950" },
   ];
 
   const [wordIdx, setWordIdx] = useState(0);
@@ -38,15 +27,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* 1. FULL VIEWPORT (100dvh) HERO WITH DISCOVERY ILLUSTRATION */}
+      {/* 1. HERO */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/50 via-slate-50/25 to-white min-h-[calc(100dvh-4.5rem)] flex flex-col justify-center items-center py-10 md:py-14 border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-5 sm:px-8 text-center relative z-10 space-y-7 my-auto">
-          {/* Headline: Locked 2 Rows with Dynamic Rotating Colors */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#0b132b] leading-[1.2] max-w-4xl mx-auto">
             <span className="block">Where young curiosity becomes</span>
             <span className="inline-block mt-2 sm:mt-3">
               <span
-                className={`inline-block px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-2xl border shadow-2xs transition-all duration-300 ease-out ${
+                className={`inline-block px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-2xl transition-all duration-300 ease-out ${
                   animatedWords[wordIdx].style
                 } ${
                   isAnimating
@@ -59,12 +47,10 @@ export default function Home() {
             </span>
           </h1>
 
-          {/* Subtext: Strictly under 20 words (17 words) */}
           <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Empowering tomorrow's scientists through an enriched curriculum, laboratory discovery, and strong Christian values in La Union.
           </p>
 
-          {/* Action CTAs */}
           <div className="pt-1 flex flex-wrap items-center justify-center gap-4">
             <Link to="/enrollment" className="btn-primary text-base px-8 py-3.5 shadow-md">
               Enroll for SY 2026-2027 <ArrowRight size={16} />
@@ -73,36 +59,35 @@ export default function Home() {
               Explore Academic Programs
             </Link>
           </div>
-          <div className="lg:col-span-5 flex justify-center">
-            {/* Custom SVG slot for robotics/science lab visual */}
+          <div className="flex justify-center">
             <RoboticsLabIllustration customSrc="/images/friends.svg" className="w-full max-w-sm h-auto drop-shadow-sm" />
           </div>
         </div>
       </section>
 
-      {/* 2. STATS ROW */}
+      {/* 2. FACTS ROW */}
       <section className="py-12 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#0b132b]">100%</p>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">DepEd Recognized</p>
+          <div className="flex flex-col items-center gap-2">
+            <Sprout size={22} className="text-blue-700" />
+            <p className="text-sm font-semibold text-[#0b132b]">Non-sectarian Christian</p>
           </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#0b132b]">1:15</p>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">Teacher-Student Ratio</p>
+          <div className="flex flex-col items-center gap-2">
+            <BookOpen size={22} className="text-blue-700" />
+            <p className="text-sm font-semibold text-[#0b132b]">Nursery through Grade 6</p>
           </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#0b132b]">15+</p>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">Years of Excellence</p>
+          <div className="flex flex-col items-center gap-2">
+            <Microscope size={22} className="text-blue-700" />
+            <p className="text-sm font-semibold text-[#0b132b]">Science-oriented curriculum</p>
           </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-[#0b132b]">Aringay</p>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">La Union Campus</p>
+          <div className="flex flex-col items-center gap-2">
+            <MapPin size={22} className="text-blue-700" />
+            <p className="text-sm font-semibold text-[#0b132b]">Aringay, La Union</p>
           </div>
         </div>
       </section>
 
-      {/* 3. SOLAR GOLD FEATURE BANNER WITH ROBOTICS ILLUSTRATION */}
+      {/* 3. FEATURE BANNER */}
       <section className="py-20 max-w-7xl mx-auto px-5 sm:px-8">
         <div className="bg-gradient-to-r from-amber-50 to-amber-100/60 rounded-2xl p-8 sm:p-12 border border-amber-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
@@ -122,13 +107,12 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:col-span-5 flex justify-center">
-            {/* Custom SVG slot for robotics/science lab visual */}
             <RoboticsLabIllustration customSrc="/images/creative.svg" className="w-full max-w-sm h-auto drop-shadow-sm" />
           </div>
         </div>
       </section>
 
-      {/* 4. PILLARS GRID WITH CUSTOM VECTOR BADGES */}
+      {/* 4. PILLARS GRID */}
       <section className="py-12 max-w-7xl mx-auto px-5 sm:px-8 space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <h2 className="text-3xl font-bold text-[#0b132b]">Built around every learner's growth</h2>

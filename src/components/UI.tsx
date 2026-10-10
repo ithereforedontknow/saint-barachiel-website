@@ -1,37 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  ImagePlus,
-  FlaskConical,
-  Users,
-  BookOpen,
-  Telescope,
-  type LucideIcon,
-} from "lucide-react";
-import logo from "/public/logo.png";
-
-interface WordmarkProps {
-  dark?: boolean;
-}
-
-/** School wordmark using the real seal artwork. `dark` = light text for dark backgrounds. */
-export function Wordmark({ dark }: WordmarkProps) {
-  return (
-    <span className="flex items-center gap-3">
-      <img
-        src={logo}
-        alt="Saint Barachiel Special Science School seal"
-        className="w-11 h-11 sm:w-12 sm:h-12 shrink-0"
-      />
-      <span className={`font-display leading-tight text-left text-base sm:text-lg ${dark ? "text-white" : "text-navy"}`}>
-        Saint Barachiel
-        <br className="hidden sm:block" />{" "}
-        <span className={`font-normal text-xs sm:text-sm sm:inline block ${dark ? "text-gold-light" : "text-brand"}`}>
-          Special Science School
-        </span>
-      </span>
-    </span>
-  );
-}
+import { useEffect, useState, type CSSProperties } from "react";
+import { ImagePlus, FlaskConical, Users, BookOpen, Telescope, type LucideIcon } from "lucide-react";
 
 interface PhotoPlaceholderProps {
   caption: string;
@@ -39,14 +7,14 @@ interface PhotoPlaceholderProps {
   className?: string;
 }
 
-/** A dashed placeholder slot for a real photo to be dropped in later. */
-export function PhotoPlaceholder({ caption, tint = "bg-brand-pale", className = "" }: PhotoPlaceholderProps) {
+/** Dashed photo placeholder for lab and campus photography. */
+export function PhotoPlaceholder({ caption, tint = "bg-blue-50/60", className = "" }: PhotoPlaceholderProps) {
   return (
     <div
-      className={`aspect-[4/3] rounded-3xl border-2 border-dashed border-navy/25 flex flex-col items-center justify-center gap-3 text-center px-6 ${tint} ${className}`}
+      className={`aspect-[4/3] rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center gap-3 text-center px-6 ${tint} ${className}`}
     >
-      <ImagePlus className="text-navy/50" size={32} />
-      <span className="text-sm text-navy/50">{caption}</span>
+      <ImagePlus className="text-blue-700/60" size={32} />
+      <span className="text-sm font-medium text-slate-600">{caption}</span>
     </div>
   );
 }
@@ -60,18 +28,25 @@ interface QuirkCardProps {
   ink?: string;
 }
 
-/** A card with an organic blob badge behind its icon and a slight, intentional tilt. */
-export function QuirkCard({ icon: Icon, title, body, rotate = 0, tint = "bg-brand-light", ink = "text-brand" }: QuirkCardProps) {
+/** Academic highlight card. One card radius, one shadow, kept consistent sitewide. */
+export function QuirkCard({
+  icon: Icon,
+  title,
+  body,
+  rotate = 0,
+  tint = "bg-blue-50",
+  ink = "text-blue-700",
+}: QuirkCardProps) {
   return (
-    <div className="bg-white rounded-3xl p-7 sm:p-8 shadow-sm" style={{ transform: `rotate(${rotate}deg)` }}>
-      <div
-        className={`w-14 h-14 flex items-center justify-center mb-5 ${tint}`}
-        style={{ borderRadius: "60% 40% 55% 45% / 45% 55% 40% 60%" }}
-      >
+    <div
+      className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm"
+      style={{ transform: `rotate(${rotate}deg)` }}
+    >
+      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${tint}`}>
         <Icon size={24} className={ink} />
       </div>
-      <h3 className="font-display text-xl text-navy mb-2">{title}</h3>
-      <p className="text-base text-navy/70 leading-relaxed">{body}</p>
+      <h3 className="text-xl font-bold text-[#0b132b] mb-2">{title}</h3>
+      <p className="text-sm text-slate-600 leading-relaxed">{body}</p>
     </div>
   );
 }
@@ -82,40 +57,42 @@ interface Slide {
 }
 
 const SLIDES: Slide[] = [
-  { label: "Science time", icon: FlaskConical },
-  { label: "Morning assembly", icon: Users },
-  { label: "Reading corner", icon: BookOpen },
-  { label: "Campus grounds", icon: Telescope },
+  { label: "Science & Robotics Lab", icon: FlaskConical },
+  { label: "Morning Flag Assembly", icon: Users },
+  { label: "Academic Reading Library", icon: BookOpen },
+  { label: "Campus & Astronomy Corner", icon: Telescope },
 ];
 
-/** Rotating stack of "photo" cards — illustrated placeholders, ready to swap for real photos. */
+/** Rotating carousel of campus science activities, standing in for real photography. */
 export function PhotoStack() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 3200);
+    const t = setInterval(() => setIndex((i) => (i + 1) % SLIDES.length), 3400);
     return () => clearInterval(t);
   }, []);
 
   return (
-    <div className="relative h-96 sm:h-[30rem] w-full max-w-md mx-auto">
+    <div className="relative h-96 sm:h-[28rem] w-full max-w-md mx-auto">
       {SLIDES.map((s, i) => {
         const offset = (i - index + SLIDES.length) % SLIDES.length;
         const Icon = s.icon;
-        const style: React.CSSProperties = {
+        const style: CSSProperties = {
           zIndex: SLIDES.length - offset,
-          transform: `translate(${offset * 14}px, ${offset * 18}px) rotate(${offset === 0 ? -3 : offset * 4 - 6}deg) scale(${1 - offset * 0.06})`,
+          transform: `translate(${offset * 12}px, ${offset * 16}px) rotate(${offset === 0 ? -2 : offset * 3 - 4}deg) scale(${1 - offset * 0.05})`,
           opacity: offset > 2 ? 0 : 1,
           transition: "transform 0.8s cubic-bezier(.22,1,.36,1), opacity 0.8s ease",
         };
         return (
           <div
             key={s.label}
-            className="absolute inset-0 rounded-[36px] border-[6px] border-white shadow-xl flex flex-col items-center justify-center gap-4"
-            style={{ ...style, background: "linear-gradient(155deg, #bfe0f8 0%, #eaf5fd 100%)" }}
+            className="absolute inset-0 rounded-2xl border-4 border-white shadow-xl flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-blue-100 via-slate-50 to-amber-50"
+            style={style}
           >
-            <Icon size={44} className="text-navy" strokeWidth={1.5} />
-            <span className="font-display text-navy text-lg">{s.label}</span>
+            <div className="w-20 h-20 rounded-xl bg-white shadow-sm flex items-center justify-center border border-slate-200">
+              <Icon size={38} className="text-[#0b132b]" strokeWidth={1.75} />
+            </div>
+            <span className="font-bold text-[#0b132b] text-lg px-4 text-center">{s.label}</span>
           </div>
         );
       })}

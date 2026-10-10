@@ -36,7 +36,7 @@ export default function About() {
             </div>
             <h2 className="text-2xl font-bold text-[#0b132b]">Our Vision</h2>
             <p className="text-slate-700 text-base leading-relaxed">
-              To be the premier science elementary and junior high institution in the region, recognized for academic excellence, innovative teaching practices, and students who lead with integrity.
+              To be the premier science elementary institution in the region, recognized for academic excellence, innovative teaching practices, and students who lead with integrity.
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="p-6 space-y-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+            <div className="p-6 space-y-3 bg-white rounded-2xl border border-slate-200 shadow-2xs">
               <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
                 <BookOpen size={20} />
               </div>
@@ -63,7 +63,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+            <div className="p-6 space-y-3 bg-white rounded-2xl border border-slate-200 shadow-2xs">
               <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
                 <Shield size={20} />
               </div>
@@ -75,7 +75,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="p-6 space-y-3 bg-white rounded-xl border border-slate-200 shadow-2xs">
+            <div className="p-6 space-y-3 bg-white rounded-2xl border border-slate-200 shadow-2xs">
               <div className="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                 <Users size={20} />
               </div>

@@ -11,11 +11,11 @@ export default function FAQ() {
     },
     {
       q: "Where is the campus located?",
-      a: "We are located at 350 Quezada Street, San Benito Sur, Aringay, La Union (near Linz Pharmacy along MacArthur National Highway).",
+      a: "We are located at 350 Quezada Street, San Benito Sur, Aringay, La Union, near Linz Pharmacy along MacArthur National Highway.",
     },
     {
-      q: "Is Saint Barachiel officially recognized by DepEd?",
-      a: "Yes, our school is fully recognized by the Department of Education (DepEd) for Preschool, Elementary, and Junior High School tracks.",
+      q: "What grade levels does the school offer?",
+      a: "We offer Nursery and Kindergarten through Grade 6, with a science-oriented curriculum at every level.",
     },
     {
       q: "What makes the Special Science curriculum different?",
@@ -23,7 +23,7 @@ export default function FAQ() {
     },
     {
       q: "Are installment payment plans available for tuition?",
-      a: "Yes. We offer flexible payment arrangements including monthly, quarterly, and semi-annual options.",
+      a: "Yes. Families pay 100 percent of miscellaneous fees plus one month of tuition at enrollment, then the remaining balance in nine equal monthly installments due on or before the 6th of each month starting in July.",
     },
   ];
 
@@ -44,7 +44,7 @@ export default function FAQ() {
           return (
             <div
               key={idx}
-              className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs transition"
+              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-2xs transition"
             >
               <button
                 onClick={() => setOpenIdx(isOpen ? null : idx)}

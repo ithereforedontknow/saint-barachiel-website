@@ -1,11 +1,12 @@
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { Bus, Car, CheckCircle2, Send, MapPin, Phone, Mail } from "lucide-react";
 
 export default function Visit() {
   const [form, setForm] = useState({ name: "", contact: "", grade: "", message: "" });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSent(true);
   };
@@ -70,7 +71,7 @@ export default function Visit() {
       </div>
 
       {/* Embedded Map */}
-      <div className="rounded-2xl overflow-hidden academic-mockup-shadow border border-slate-200 h-80 sm:h-96">
+      <div className="rounded-2xl overflow-hidden border border-slate-200 h-80 sm:h-96">
         <iframe
           title="Map to Saint Barachiel Special Science School"
           src="https://www.google.com/maps?q=350+Quezada+Street,+San+Benito+Sur,+Aringay,+La+Union,+Philippines&output=embed"
@@ -91,10 +92,10 @@ export default function Visit() {
               <MapPin size={15} className="text-amber-600" /> 350 Quezada St, San Benito Sur, Aringay, La Union
             </p>
             <p className="flex items-center gap-2.5">
-              <Phone size={15} className="text-amber-600" /> 0917 123 4567
+              <Phone size={15} className="text-amber-600" /> (072) 607-1644
             </p>
             <p className="flex items-center gap-2.5">
-              <Mail size={15} className="text-amber-600" /> admissions@sbsss.edu.ph
+              <Mail size={15} className="text-amber-600" /> saintbarachiel_school@yahoo.com
             </p>
           </div>
         </div>
@@ -133,7 +134,7 @@ export default function Visit() {
               <div>
                 <label className="block text-xs font-semibold text-slate-700 mb-1">Grade Level Inquiring For</label>
                 <input
-                  placeholder="Kindergarten, Grade 1, Grade 7, etc."
+                  placeholder="Kindergarten, Grade 1, Grade 6, etc."
                   value={form.grade}
                   onChange={(e) => setForm({ ...form, grade: e.target.value })}
                   className="w-full rounded-lg border border-slate-300 px-3.5 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600"

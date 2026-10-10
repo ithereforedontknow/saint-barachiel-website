@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
 
 export default function Programs() {
-  const [activeTab, setActiveTab] = useState<"all" | "preschool" | "elementary" | "jhs">("all");
+  const [activeTab, setActiveTab] = useState<"all" | "preschool" | "elementary">("all");
 
   const programs = [
     {
@@ -40,26 +40,12 @@ export default function Programs() {
       cardBg: "bg-emerald-50/60 border-emerald-200",
       badgeStyle: "bg-emerald-100 text-emerald-800 border-emerald-200",
       title: "Intermediate Science Track (Grades 4-6)",
-      desc: "Advanced elementary studies preparing students for secondary science high school standards.",
+      desc: "Advanced elementary studies building toward investigatory science and applied math.",
       features: [
         "Investigatory science projects",
         "Intermediate algebra and geometry concepts",
         "Robotics and computer logic",
         "Regional academic competitions",
-      ],
-    },
-    {
-      category: "jhs",
-      badge: "Junior High",
-      cardBg: "bg-slate-50 border-slate-300",
-      badgeStyle: "bg-[#0b132b] text-white border-[#0b132b]",
-      title: "Junior High School (Grades 7-10)",
-      desc: "A rigorous STEM-focused curriculum designed to prepare students for top Senior High strands and universities.",
-      features: [
-        "Advanced Biology, Chemistry, and Physics labs",
-        "Research methodology and defense",
-        "Robotics and programming options",
-        "Student council and leadership programs",
       ],
     },
   ];
@@ -73,7 +59,7 @@ export default function Programs() {
           Curriculum structured for academic brilliance.
         </h1>
         <p className="text-slate-600 text-base">
-          Our science-oriented curriculum prepares students at every level with the tools needed for modern academic success.
+          Our science-oriented curriculum prepares students at every level with the tools needed for academic success.
         </p>
 
         {/* Tab Filters */}
@@ -82,7 +68,6 @@ export default function Programs() {
             { id: "all", label: "All Offerings" },
             { id: "preschool", label: "Preschool" },
             { id: "elementary", label: "Elementary" },
-            { id: "jhs", label: "Junior High School" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -125,8 +110,7 @@ export default function Programs() {
               </ul>
             </div>
 
-            <div className="pt-4 border-t border-slate-300/60 flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-600">DepEd Recognized Track</span>
+            <div className="pt-4 border-t border-slate-300/60 flex items-center justify-end">
               <Link to="/enrollment" className="btn-primary text-xs py-2 px-4 inline-flex items-center gap-1">
                 Apply for this program <ArrowRight size={13} />
               </Link>

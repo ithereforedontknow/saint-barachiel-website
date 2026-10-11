@@ -42,10 +42,10 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white py-16 px-5 sm:px-8 max-w-4xl mx-auto space-y-10">
       <div className="text-center space-y-3">
-        <h1 className="text-4xl font-bold text-[#0b132b] tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
           Frequently Asked Questions
         </h1>
-        <p className="text-slate-600 text-sm">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Everything you need to know about admissions, academics, and campus guidelines.
         </p>
       </div>
@@ -60,6 +60,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => setOpenIdx(isOpen ? null : idx)}
+                aria-expanded={isOpen}
                 className="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-[#0b132b] text-base hover:bg-slate-50 transition-colors"
               >
                 <span>{faq.q}</span>

@@ -9,7 +9,7 @@ export default function Enrollment() {
         <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
           Simple 4-step enrollment process.
         </h1>
-        <p className="text-slate-600 text-base">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Join the Saint Barachiel community. We accept transferees and new applicants for Preschool and Elementary.
         </p>
       </div>

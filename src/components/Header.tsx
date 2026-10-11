@@ -62,6 +62,7 @@ export default function Header() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden p-2.5 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
           aria-label="Toggle navigation menu"
+          aria-expanded={mobileOpen}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

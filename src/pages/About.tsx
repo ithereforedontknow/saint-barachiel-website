@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Band */}
-      <section className="border-b border-slate-200 bg-slate-50 py-16 px-5 sm:px-8">
+      <section className="py-16 px-5 sm:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
             Nurturing academic brilliance and character.
@@ -31,7 +31,7 @@ export default function About() {
 
           {/* Vision */}
           <div className="bg-amber-50 p-8 sm:p-10 rounded-2xl space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+            <div className="w-12 h-12 rounded-xl bg-amber-700 text-white flex items-center justify-center shadow-xs">
               <Award size={24} />
             </div>
             <h2 className="text-2xl font-bold text-[#0b132b]">Our Vision</h2>

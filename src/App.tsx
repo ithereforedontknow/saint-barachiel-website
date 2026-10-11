@@ -8,6 +8,7 @@ import Programs from "./pages/Programs";
 import Enrollment from "./pages/Enrollment";
 import FAQ from "./pages/FAQ";
 import Visit from "./pages/Visit";
+import NotFound from "./pages/NotFound";
 
 function ScrollToTop(): null {
   const { pathname } = useLocation();
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/enrollment" element={<Enrollment />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/visit" element={<Visit />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -2,23 +2,72 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Bus, Car, CheckCircle2, Send, MapPin, Phone, Mail } from "lucide-react";
 
+const SCHOOL_EMAIL = "saintbarachiel_school@yahoo.com";
+
+// Set VITE_FORMSPREE_ENDPOINT in a .env file (see .env.example) once you
+// have created a form at https://formspree.io. Submissions then land in
+// your Formspree inbox and the visitor never has to leave the page. Until
+// that is configured, the form falls back to opening the visitor's own
+// email app with the message pre-filled.
+const FORM_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined;
+
 export default function Visit() {
   const [form, setForm] = useState({ name: "", contact: "", grade: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: FormEvent) => {
+  const buildMailto = () => {
+    const subject = `Inquiry from ${form.name || "a parent or guardian"}`;
+    const bodyLines = [
+      `Name: ${form.name}`,
+      `Contact: ${form.contact}`,
+      form.grade ? `Grade level: ${form.grade}` : null,
+      "",
+      form.message,
+    ].filter((line) => line !== null);
+
+    return `mailto:${SCHOOL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      bodyLines.join("\n"),
+    )}`;
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSent(true);
+
+    if (!FORM_ENDPOINT) {
+      window.location.href = buildMailto();
+      setStatus("sent");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+      } else {
+        throw new Error("Form service returned an error");
+      }
+    } catch {
+      // The form service could not be reached. Fall back to the visitor's
+      // own email app rather than losing the inquiry entirely.
+      window.location.href = buildMailto();
+      setStatus("error");
+    }
   };
 
   return (
     <div className="min-h-screen bg-white py-16 px-5 sm:px-8 max-w-7xl mx-auto space-y-16">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <h1 className="text-4xl font-bold text-[#0b132b] tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
           Visit Saint Barachiel
         </h1>
-        <p className="text-slate-600 text-base">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Located 10 to 15 minutes north of Agoo along MacArthur Highway in Aringay, La Union.
         </p>
       </div>
@@ -101,12 +150,20 @@ export default function Visit() {
         </div>
 
         <div className="md:col-span-3 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-2xs">
-          {sent ? (
+          {status === "sent" && FORM_ENDPOINT ? (
             <div className="flex items-center gap-3 p-6 bg-emerald-50 text-emerald-900 rounded-lg">
               <CheckCircle2 size={24} className="shrink-0 text-emerald-700" />
               <div>
-                <p className="font-bold text-base">Inquiry Submitted!</p>
-                <p className="text-xs text-emerald-800">We will contact you shortly via phone or email.</p>
+                <p className="font-bold text-base">Inquiry sent</p>
+                <p className="text-xs text-emerald-800">Thank you. Our admissions team will reach out by phone or email shortly.</p>
+              </div>
+            </div>
+          ) : status === "sent" || status === "error" ? (
+            <div className="flex items-center gap-3 p-6 bg-emerald-50 text-emerald-900 rounded-lg">
+              <CheckCircle2 size={24} className="shrink-0 text-emerald-700" />
+              <div>
+                <p className="font-bold text-base">Opening your email app</p>
+                <p className="text-xs text-emerald-800">A draft message to our admissions team should now be open. Send it from there to complete your inquiry.</p>
               </div>
             </div>
           ) : (
@@ -150,8 +207,8 @@ export default function Visit() {
                   className="w-full rounded-lg border border-slate-300 px-3.5 py-2 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"
                 />
               </div>
-              <button type="submit" className="btn-primary w-full py-3">
-                <Send size={15} /> Send Inquiry
+              <button type="submit" disabled={status === "sending"} className="btn-primary w-full py-3 disabled:opacity-60">
+                <Send size={15} /> {status === "sending" ? "Sending..." : "Send Inquiry"}
               </button>
             </form>
           )}

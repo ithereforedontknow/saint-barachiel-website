@@ -58,7 +58,7 @@ export default function Programs() {
         <h1 className="text-4xl sm:text-5xl font-bold text-[#0b132b] tracking-tight">
           Curriculum structured for academic brilliance.
         </h1>
-        <p className="text-slate-600 text-base">
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Our science-oriented curriculum prepares students at every level with the tools needed for academic success.
         </p>
 

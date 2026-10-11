@@ -1,23 +1,5 @@
 import { useEffect, useState, type CSSProperties } from "react";
-import { ImagePlus, FlaskConical, Users, BookOpen, Telescope, type LucideIcon } from "lucide-react";
-
-interface PhotoPlaceholderProps {
-  caption: string;
-  tint?: string;
-  className?: string;
-}
-
-/** Dashed photo placeholder for lab and campus photography. */
-export function PhotoPlaceholder({ caption, tint = "bg-blue-50/60", className = "" }: PhotoPlaceholderProps) {
-  return (
-    <div
-      className={`aspect-[4/3] rounded-2xl border-2 border-dashed border-slate-300 flex flex-col items-center justify-center gap-3 text-center px-6 ${tint} ${className}`}
-    >
-      <ImagePlus className="text-blue-700/60" size={32} />
-      <span className="text-sm font-medium text-slate-600">{caption}</span>
-    </div>
-  );
-}
+import { FlaskConical, Users, BookOpen, Telescope, type LucideIcon } from "lucide-react";
 
 interface QuirkCardProps {
   icon: LucideIcon;

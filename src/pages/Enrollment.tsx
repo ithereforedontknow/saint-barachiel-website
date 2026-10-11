@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Wallet, AlertTriangle } from "lucide-react";
 
 export default function Enrollment() {
   return (
@@ -31,7 +31,7 @@ export default function Enrollment() {
         </div>
 
         {/* Step 2 - Featured */}
-        <div className="bg-blue-50/50 p-6 rounded-2xl border-2 border-blue-700 relative flex flex-col justify-between shadow-sm">
+        <div className="bg-blue-50 p-6 rounded-2xl relative flex flex-col justify-between shadow-sm">
           <div className="space-y-3">
             <span className="bg-blue-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full absolute -top-3 right-4 tracking-wider uppercase">
               Important
@@ -73,6 +73,34 @@ export default function Enrollment() {
             </p>
           </div>
           <span className="text-[11px] text-emerald-700 font-bold">Slot Guaranteed</span>
+        </div>
+      </div>
+
+      {/* Payment Terms & Withdrawal Policy */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="bg-blue-50 p-8 rounded-2xl space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shadow-xs">
+            <Wallet size={22} />
+          </div>
+          <h2 className="text-xl font-bold text-[#0b132b]">Payment Terms</h2>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            At enrollment, pay 100 percent of miscellaneous fees plus one month of tuition as downpayment. The
+            remaining balance is spread across 9 equal monthly installments, due on or before the 6th of each
+            month starting in July.
+          </p>
+        </div>
+
+        <div className="bg-amber-50 p-8 rounded-2xl space-y-4">
+          <div className="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
+            <AlertTriangle size={22} />
+          </div>
+          <h2 className="text-xl font-bold text-[#0b132b]">Withdrawal & Transfer</h2>
+          <ul className="text-sm text-slate-700 leading-relaxed space-y-1.5">
+            <li>Before classes start: only the reservation fee is forfeited.</li>
+            <li>Within the first week of classes: 10 percent of total school fees.</li>
+            <li>Within the second week of classes: 20 percent of total school fees.</li>
+            <li>After the second week: the full school fees for the year, regardless of actual attendance.</li>
+          </ul>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ export default function Visit() {
       {/* Directions Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Public Transport */}
-        <div className="bg-amber-50/70 p-8 rounded-2xl border border-amber-200 space-y-4">
+        <div className="bg-amber-50 p-8 rounded-2xl space-y-4">
           <div className="flex items-center gap-3">
             <Bus className="text-amber-700" size={26} />
             <h2 className="text-xl font-bold text-[#0b132b]">By Public Transport</h2>
@@ -48,7 +48,7 @@ export default function Visit() {
         </div>
 
         {/* Private Vehicle */}
-        <div className="bg-blue-50/70 p-8 rounded-2xl border border-blue-200 space-y-4">
+        <div className="bg-blue-50 p-8 rounded-2xl space-y-4">
           <div className="flex items-center gap-3">
             <Car className="text-blue-700" size={26} />
             <h2 className="text-xl font-bold text-[#0b132b]">By Private Vehicle</h2>
@@ -102,7 +102,7 @@ export default function Visit() {
 
         <div className="md:col-span-3 bg-white p-6 sm:p-8 rounded-xl border border-slate-200 shadow-2xs">
           {sent ? (
-            <div className="flex items-center gap-3 p-6 bg-emerald-50 text-emerald-900 rounded-lg border border-emerald-200">
+            <div className="flex items-center gap-3 p-6 bg-emerald-50 text-emerald-900 rounded-lg">
               <CheckCircle2 size={24} className="shrink-0 text-emerald-700" />
               <div>
                 <p className="font-bold text-base">Inquiry Submitted!</p>

@@ -19,7 +19,7 @@ export default function About() {
       <section className="py-16 max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Mission */}
-          <div className="bg-blue-50/70 p-8 sm:p-10 rounded-2xl border border-blue-200 space-y-4">
+          <div className="bg-blue-50 p-8 sm:p-10 rounded-2xl space-y-4">
             <div className="w-12 h-12 rounded-xl bg-blue-700 text-white flex items-center justify-center shadow-xs">
               <Target size={24} />
             </div>
@@ -30,7 +30,7 @@ export default function About() {
           </div>
 
           {/* Vision */}
-          <div className="bg-amber-50/70 p-8 sm:p-10 rounded-2xl border border-amber-200 space-y-4">
+          <div className="bg-amber-50 p-8 sm:p-10 rounded-2xl space-y-4">
             <div className="w-12 h-12 rounded-xl bg-amber-600 text-white flex items-center justify-center shadow-xs">
               <Award size={24} />
             </div>

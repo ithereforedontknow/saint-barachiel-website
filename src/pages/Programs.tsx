@@ -9,7 +9,7 @@ export default function Programs() {
     {
       category: "preschool",
       badge: "Preschool",
-      cardBg: "bg-amber-50/60 border-amber-200",
+      cardBg: "bg-amber-50",
       badgeStyle: "bg-amber-100 text-amber-800 border-amber-200",
       title: "Nursery & Kindergarten",
       desc: "Early childhood development combining phonics, arithmetic, and playful science exploration.",
@@ -23,7 +23,7 @@ export default function Programs() {
     {
       category: "elementary",
       badge: "Elementary",
-      cardBg: "bg-blue-50/60 border-blue-200",
+      cardBg: "bg-blue-50",
       badgeStyle: "bg-blue-100 text-blue-800 border-blue-200",
       title: "Primary Science Track (Grades 1-3)",
       desc: "Laying a strong foundation in reading comprehension, mathematical logic, and hands-on nature discovery.",
@@ -37,7 +37,7 @@ export default function Programs() {
     {
       category: "elementary",
       badge: "Elementary",
-      cardBg: "bg-emerald-50/60 border-emerald-200",
+      cardBg: "bg-emerald-50",
       badgeStyle: "bg-emerald-100 text-emerald-800 border-emerald-200",
       title: "Intermediate Science Track (Grades 4-6)",
       desc: "Advanced elementary studies building toward investigatory science and applied math.",
@@ -89,7 +89,7 @@ export default function Programs() {
         {filtered.map((prog, idx) => (
           <div
             key={idx}
-            className={`${prog.cardBg} p-8 rounded-2xl border flex flex-col justify-between space-y-6 shadow-xs`}
+            className={`${prog.cardBg} p-8 rounded-2xl flex flex-col justify-between space-y-6 shadow-xs`}
           >
             <div className="space-y-4">
               <span

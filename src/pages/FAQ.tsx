@@ -25,6 +25,18 @@ export default function FAQ() {
       q: "Are installment payment plans available for tuition?",
       a: "Yes. Families pay 100 percent of miscellaneous fees plus one month of tuition at enrollment, then the remaining balance in nine equal monthly installments due on or before the 6th of each month starting in July.",
     },
+    {
+      q: "What is the attendance policy?",
+      a: "Pupils who exceed 20 percent absence in a school year may forfeit credit for that grade level. An excuse slip is required for any absence, and a medical certificate is required for absences of two days or more.",
+    },
+    {
+      q: "Is there a school uniform?",
+      a: "Yes, a prescribed uniform is worn daily. Pupils are expected to come to school in complete uniform, neat and properly groomed, as outlined in the pupil's handbook.",
+    },
+    {
+      q: "What happens if we withdraw or transfer mid-year?",
+      a: "Before classes start, only the reservation fee is forfeited. Within the first week of classes, 10 percent of total school fees is forfeited; within the second week, 20 percent. After the second week, the full school fees for the year are due, regardless of actual attendance.",
+    },
   ];
 
   return (

@@ -89,7 +89,7 @@ export default function Home() {
 
       {/* 3. FEATURE BANNER */}
       <section className="py-20 max-w-7xl mx-auto px-5 sm:px-8">
-        <div className="bg-gradient-to-r from-amber-50 to-amber-100/60 rounded-2xl p-8 sm:p-12 border border-amber-200 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-gradient-to-r from-amber-50 to-amber-100 rounded-2xl p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
             <span className="bg-[#0b132b] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block">
               The Science Advantage
@@ -122,7 +122,7 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-emerald-50/70 p-8 rounded-2xl border border-emerald-200/80 space-y-4 shadow-xs">
+          <div className="bg-emerald-50 p-8 rounded-2xl space-y-4 shadow-xs">
             <div className="w-12 h-12 rounded-xl bg-emerald-800 text-white flex items-center justify-center">
               <BookOpen size={22} />
             </div>
@@ -132,7 +132,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-blue-50/70 p-8 rounded-2xl border border-blue-200/80 space-y-4 shadow-xs">
+          <div className="bg-blue-50 p-8 rounded-2xl space-y-4 shadow-xs">
             <div className="w-12 h-12 rounded-xl bg-blue-800 text-white flex items-center justify-center">
               <ShieldCheck size={22} />
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-amber-50/70 p-8 rounded-2xl border border-amber-200/80 space-y-4 shadow-xs">
+          <div className="bg-amber-50 p-8 rounded-2xl space-y-4 shadow-xs">
             <div className="w-12 h-12 rounded-xl bg-amber-700 text-white flex items-center justify-center">
               <Users size={22} />
             </div>
